@@ -1,9 +1,10 @@
 
 
 let wordBank = ['platypus','kiwi','blobfish','armadillo','narwhal','salamander','aardvark','axolotl','viperfish','condor'];
-let remainingGuesses = 5;
+let remainingGuesses = 12;
 let wins = 0;
-let lettersGuessed = ['dogs'];
+var dashedAnswer = [] ;
+let lettersGuessed = ['lettersGuess:'];
 const alphabet = 
     ['a','b','c','d','e','f','g','h','i','j','k','l','m',
     'n','o','p','q','r','s','t','u','v','w','x','y','z'];
@@ -16,6 +17,7 @@ function Word() {
     return wordBank[w]
 };
 
+
 //This code below prints the dashed answer to the console    
 var spacesNeeded = (Word().length);
 console.log(spacesNeeded)
@@ -27,85 +29,62 @@ console.log(selectedWord)
 //Code below will create an array of selectedWord
 let selectedWordArr = selectedWord.split('')
 console.log(selectedWordArr)
+
+//The code below shows how NOT to write a 'while' statement
+//the while statement only needs a 'condition'
+//and does not require the same condition counter that is the 
+//for statement
+//while (j = 0 ; j < spacesNeeded ; j++) {
+  //  dashedAnswer.push("-")
+//}
+
+while (dashedAnswer.length <= spacesNeeded-1)
+{
+    dashedAnswer.push("-");
+    console.log(dashedAnswer)
+}
+
 //Code below was written to test the line above    
 //console.log(selectedWordArr)
+for (x = remainingGuesses ; x > 0 ; x--) {
 var guess = prompt("Enter a letter")
 
 //here I have to add a condition that checks
 //that the 'guess' is part of the 'alphabet'
-for (s = 0; s <= remainingGuesses -1 ; s++ )
-    if (guess === alphabet[s]) {
-    console.log("this matches");
-    } else if (guess.length !== 1); {
-    alert("Enter a single letter");
-    } /*else { guess === null) {
-        prompt("Enter a letter");
+    for (s = 0; s < alphabet.length; s++ ){
+        if (guess === alphabet[s]) {
+            for ( i = 0 ; i < selectedWord.length; i++){
+                if (guess === selectedWord[i]) {
+                dashedAnswer.splice(i,1,guess)
+
+               
+                break
+                }
+            else {
+                for (t = 0 ; t< 1; t++)
+                //the code below is printing wrong guesses
+                //four times bc the counter is set to 
+                //equal the number of letters in the word
+                //how do I tell the comp to stop adding 
+                //the wrong letter after inputting it once?
+                //here i would need a for loop to tell it to loop once
+                lettersGuessed.push(guess)
+                console.log(lettersGuessed)
+                console.log(dashedAnswer)
+            }
+        
+            }
+            console.log(guess + " is in index " + i + " of selected words.")
+            break
+        }
+        else if (guess.length !== 1) {
+            alert("Enter a single letter")
+        
+        }
+
     }
-
-
     
-
-if (remainingGuesses >= 0){
-    guess = prompt("Guess another letter")
- 
-   }
 }
 
 
 
-
-//other stuff to figure out problem
-//The code below applies the map method
-//to the 'arr' array to produce newArr
-
-/*let arr = [1,2,3,4,5,6,'cat',84,'dog'];
-
-let newlist = arr.map((val, i, arr) => {
-    return {
-      value: val,
-      index: i,
-      arrary: arr}
-})
-console.log(newlist)
-
-var kvArray = [
-    {key: 1, value: 10}, 
-    {key: 2, value: 20}, 
-    {key: 3, value: 30}];
-
-var reformattedArray = kvArray.map(obj =>{ 
-var rObj = {};
-rObj[obj.key] = obj.value;
-return rObj;
-
-})
-
-    //update the lettersGuessed and clear any dashes that were guessed correctly
-//Code below states which sections need to be 
-//updated while the player's lives remain 
-//more than 0.
-//This loop needs to continue updating the following 
-//until the remainingGuesses reaches zero.
-    //update remainingGuesses
-    //update lettersGuessed
-    //update wins
-
-
-
-//Code below was written to ensure the js was 
-//linked properly and to practice syntax; made into a note.
-//if (remainingGuesses>0){
-//    document.write(wordBank.length)
-//}
-
-//Code below is telling the interpreter to loop
-//the 'grab a word from the wordBank' function until
-// 'remainingGuess' reached zero
-
-//if (remainingGuesses>0) {
-  // return (retrieveWord);
-  
-//}
-   // return 
-//} else {
-    //end game code here */
