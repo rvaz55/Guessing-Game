@@ -44,10 +44,13 @@ while (dashedAnswer.length <= spacesNeeded-1)
     console.log(dashedAnswer)
 }
 
+
+
 //Code below was written to test the line above    
 //console.log(selectedWordArr)
 for (x = remainingGuesses ; x > 0 ; x--) {
 var guess = prompt("Enter a letter")
+
 
 //here I have to add a condition that checks
 //that the 'guess' is part of the 'alphabet'
@@ -60,6 +63,7 @@ var lettersInWord = false
                     lettersInWord = true ;
                 dashedAnswer.splice(i,1,guess)
                     console.log(dashedAnswer)
+                    
                 }
            /* else {
              //   for (t = 0 ; t< 1; t++)
@@ -75,21 +79,35 @@ var lettersInWord = false
             } */
         
             }
-            console.log(guess + " is in index " + i + " of selected words.")
             
         }
-        else if (guess.length !== 1) {
-            alert("Enter a single letter")
-        
-        }
+       
 
     }
  if (lettersInWord === false) {
     lettersGuessed.push(guess)
+    remainingGuesses--
     console.log(lettersGuessed)
+    console.log('remaining lives: '+ remainingGuesses)
  }
 
 }
 
+for (x = remainingGuesses ; x > 0 ; x--)
+if (dashedAnswer[i] === alphabet[i]) {
+    console.log('you win!')
+}
+if (remainingGuesses < 0 ) {
+    console.log('you lose')
+}
+
+//here I will create conditions to win and lose!
+//first if will say:
+//if the dashedWord array DOES have all letters then...
+//print msg - you win
+//if remaining lives = 0 then...
+//print msg - you lose
+//if the dashedArray has any dashes
+//print msg - you lose
 
 
