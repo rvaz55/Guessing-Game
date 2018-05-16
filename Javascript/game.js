@@ -4,7 +4,7 @@ let wordBank = ['platypus','kiwi','blobfish','armadillo','narwhal','salamander',
 let remainingGuesses = 12;
 let wins = 0;
 var dashedAnswer = [] ;
-let lettersGuessed = ['lettersGuess:'];
+let lettersGuessed = [];
 const alphabet = 
     ['a','b','c','d','e','f','g','h','i','j','k','l','m',
     'n','o','p','q','r','s','t','u','v','w','x','y','z'];
@@ -51,31 +51,32 @@ var guess = prompt("Enter a letter")
 
 //here I have to add a condition that checks
 //that the 'guess' is part of the 'alphabet'
+
+var lettersInWord = false 
     for (s = 0; s < alphabet.length; s++ ){
         if (guess === alphabet[s]) {
             for ( i = 0 ; i < selectedWord.length; i++){
                 if (guess === selectedWord[i]) {
+                    lettersInWord = true ;
                 dashedAnswer.splice(i,1,guess)
-
-               
-                break
+                    console.log(dashedAnswer)
                 }
-            else {
-                for (t = 0 ; t< 1; t++)
+           /* else {
+             //   for (t = 0 ; t< 1; t++)
                 //the code below is printing wrong guesses
                 //four times bc the counter is set to 
                 //equal the number of letters in the word
                 //how do I tell the comp to stop adding 
                 //the wrong letter after inputting it once?
                 //here i would need a for loop to tell it to loop once
-                lettersGuessed.push(guess)
+                lettersGuessed.splice(0,0,guess)
                 console.log(lettersGuessed)
-                console.log(dashedAnswer)
-            }
+                console.log(dashedAnswer) 
+            } */
         
             }
             console.log(guess + " is in index " + i + " of selected words.")
-            break
+            
         }
         else if (guess.length !== 1) {
             alert("Enter a single letter")
@@ -83,7 +84,11 @@ var guess = prompt("Enter a letter")
         }
 
     }
-    
+ if (lettersInWord === false) {
+    lettersGuessed.push(guess)
+    console.log(lettersGuessed)
+ }
+
 }
 
 
