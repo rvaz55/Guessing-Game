@@ -48,7 +48,7 @@ while (dashedAnswer.length <= spacesNeeded-1)
 
 //Code below was written to test the line above    
 //console.log(selectedWordArr)
-for (x = remainingGuesses ; x > 0 ; x--) {
+for (x = 12 ; x > 0 ; x--) {
 var guess = prompt("Enter a letter")
 
 
@@ -62,7 +62,7 @@ var lettersInWord = false
                 if (guess === selectedWord[i]) {
                     lettersInWord = true ;
                 dashedAnswer.splice(i,1,guess)
-                    console.log(dashedAnswer)
+                    console.log("dashedAnswer: " + dashedAnswer)
                     
                 }
            /* else {
@@ -85,7 +85,7 @@ var lettersInWord = false
 
     }
  if (lettersInWord === false) {
-    lettersGuessed.push(guess)
+    lettersGuessed.push(guess);
     remainingGuesses--
     console.log(lettersGuessed)
     console.log('remaining lives: '+ remainingGuesses)
@@ -93,13 +93,16 @@ var lettersInWord = false
 
 }
 
-for (x = remainingGuesses ; x > 0 ; x--)
-if (dashedAnswer[i] === alphabet[i]) {
-    console.log('you win!')
+var x =12
+for (x = 12 ; x > 0 ; x--) {
+   if (dashedAnswer[i]=== alphabet[i]) {
+   document.write("You win!") 
+   } else {
+       document.write("You lose")
+   }
+
 }
-if (remainingGuesses < 0 ) {
-    console.log('you lose')
-}
+
 
 //here I will create conditions to win and lose!
 //first if will say:

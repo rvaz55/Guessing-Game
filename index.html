@@ -3,27 +3,41 @@
 <head>
  <title>Guessing Game</title>
  <link href="./CSS/reset.css" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
  <link href="./CSS/styles.css" rel="stylesheet">
- <script src="Javascript/game.js"></script>
+<script src=""></script>
 </head>
 <body>
-<div id = "main-container" >
-    <div class="container">
+<div id = "body-container" >
+    <div id="divImgCont">
+    <div class="container" id="title-box">
         <h1>Guessing Game</h1>
 
     </div>
 
-    <div class="container">
-        <h2>Dashed word goes here</h2>
+    <div class="leftSide">
+        <h2>Dashed word:</h2>
         </div>
 
-    <div class="container">
-        <h3>Leetters Guessed and Remaining Lives</h3>
+    <div class="rightSide">
+        <h3>Remaining Turns:</h3>
         </div>
 
-<div class="container">
-        <h3>alphabet</h3>
+<div class="rightSide" id="lettersGuessedBox">
+        <h3>Letters Guessed:</h3>
         </div>
+       
+        <div class="rightSide" id="inputBox">
+                <h3>Input Guess:</h3>
+                <br>
+                <input type="text" name="keyedLetter">
+                <br>
+                <input id="submitButton" type="submit" name="Submit" value="Submit">
+                <br>
+                </div>
+
+    </div>
+        
     
 </div>
 </body>

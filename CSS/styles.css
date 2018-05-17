@@ -1,0 +1,73 @@
+div#body-container {
+    margin: auto auto 25px auto;
+    font-family: 'Love Ya Like A Sister', Arial, Helvetica, sans-serif;
+    height: 100%;
+    width: 100%;
+    background-color: lightseagreen;
+    position: fixed
+}
+
+div#divImgCont {
+    background-image: url(../Images/NotebookBlank.jpeg);
+    height: 100%;
+    width: 100%;
+    margin: 0 auto 0 auto ;
+    background-repeat: no-repeat;
+    position: fixed;
+    left: 10%;
+    
+}
+
+
+div#title-box {
+    position: relative;
+    top: 50px;
+    right: -80px;
+    width: 250px ;
+    height: 80px;
+    background-color: hsl(214, 31%, 54%);
+    border: dashed black 2px;
+    font-weight: bold;
+    font-size: 250%;
+    text-align: center;
+    padding: 5px 0 5px 0;
+}
+
+div.leftSide {
+    position: relative;
+    right:150px;
+    top:350px;
+    margin: 10px auto 20px auto;
+    width: 200px ;
+    height: 50px;
+    background-color:hsl(214, 31%, 54%);
+    border: dashed black 2px;
+    text-align: center;
+   
+}
+
+div.rightSide {
+    position: relative;
+    left: 200px;
+    top: 70px ;
+    margin: 10px auto 20px auto;
+    width: 200px ;
+    height: 50px;
+    background-color: hsl(214, 31%, 54%);
+    border: dashed black 2px;
+    text-align: center;
+}
+
+div#inputBox {
+    width: 200px ;
+    height: 100px;
+    text-align: center;
+}
+
+input#submitButton {
+    margin-top: 10px;
+}
+
+div#lettersGuessedBox{
+   height: 100px;
+}
